@@ -13,18 +13,7 @@
 		30A4EE19204F35F70050ED91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4EE17204F35F70050ED91 /* Main.storyboard */; };
 		30A4EE1B204F35F70050ED91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A4EE1A204F35F70050ED91 /* Assets.xcassets */; };
 		30A4EE1E204F35F70050ED91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A4EE1C204F35F70050ED91 /* LaunchScreen.storyboard */; };
-		30A4EE29204F35F70050ED91 /* MagicTrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4EE28204F35F70050ED91 /* MagicTrickTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		30A4EE25204F35F70050ED91 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30A4EE06204F35F60050ED91 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30A4EE0D204F35F60050ED91;
-			remoteInfo = MagicTrick;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		30A4EE0E204F35F60050ED91 /* MagicTrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,20 +24,10 @@
 		30A4EE1A204F35F70050ED91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30A4EE1D204F35F70050ED91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30A4EE1F204F35F70050ED91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30A4EE24204F35F70050ED91 /* MagicTrickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicTrickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30A4EE28204F35F70050ED91 /* MagicTrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicTrickTests.swift; sourceTree = "<group>"; };
-		30A4EE2A204F35F70050ED91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		30A4EE0B204F35F60050ED91 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30A4EE21204F35F70050ED91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				30A4EE10204F35F60050ED91 /* MagicTrick */,
-				30A4EE27204F35F70050ED91 /* MagicTrickTests */,
 				30A4EE0F204F35F60050ED91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				30A4EE0E204F35F60050ED91 /* MagicTrick.app */,
-				30A4EE24204F35F70050ED91 /* MagicTrickTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,15 +65,6 @@
 				30A4EE1F204F35F70050ED91 /* Info.plist */,
 			);
 			path = MagicTrick;
-			sourceTree = "<group>";
-		};
-		30A4EE27204F35F70050ED91 /* MagicTrickTests */ = {
-			isa = PBXGroup;
-			children = (
-				30A4EE28204F35F70050ED91 /* MagicTrickTests.swift */,
-				30A4EE2A204F35F70050ED91 /* Info.plist */,
-			);
-			path = MagicTrickTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,24 +87,6 @@
 			productReference = 30A4EE0E204F35F60050ED91 /* MagicTrick.app */;
 			productType = "com.apple.product-type.application";
 		};
-		30A4EE23204F35F70050ED91 /* MagicTrickTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30A4EE30204F35F70050ED91 /* Build configuration list for PBXNativeTarget "MagicTrickTests" */;
-			buildPhases = (
-				30A4EE20204F35F70050ED91 /* Sources */,
-				30A4EE21204F35F70050ED91 /* Frameworks */,
-				30A4EE22204F35F70050ED91 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				30A4EE26204F35F70050ED91 /* PBXTargetDependency */,
-			);
-			name = MagicTrickTests;
-			productName = MagicTrickTests;
-			productReference = 30A4EE24204F35F70050ED91 /* MagicTrickTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,11 +100,6 @@
 					30A4EE0D204F35F60050ED91 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-					};
-					30A4EE23204F35F70050ED91 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 30A4EE0D204F35F60050ED91;
 					};
 				};
 			};
@@ -172,7 +117,6 @@
 			projectRoot = "";
 			targets = (
 				30A4EE0D204F35F60050ED91 /* MagicTrick */,
-				30A4EE23204F35F70050ED91 /* MagicTrickTests */,
 			);
 		};
 /* End PBXProject section */
@@ -189,13 +133,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A4EE22204F35F70050ED91 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -208,23 +145,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A4EE20204F35F70050ED91 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30A4EE29204F35F70050ED91 /* MagicTrickTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		30A4EE26204F35F70050ED91 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 30A4EE0D204F35F60050ED91 /* MagicTrick */;
-			targetProxy = 30A4EE25204F35F70050ED91 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		30A4EE17204F35F70050ED91 /* Main.storyboard */ = {
@@ -383,40 +304,6 @@
 			};
 			name = Release;
 		};
-		30A4EE31204F35F70050ED91 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99DC555NUS;
-				INFOPLIST_FILE = MagicTrickTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.romanroibu.MagicTrickTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicTrick.app/MagicTrick";
-			};
-			name = Debug;
-		};
-		30A4EE32204F35F70050ED91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99DC555NUS;
-				INFOPLIST_FILE = MagicTrickTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.romanroibu.MagicTrickTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicTrick.app/MagicTrick";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,15 +321,6 @@
 			buildConfigurations = (
 				30A4EE2E204F35F70050ED91 /* Debug */,
 				30A4EE2F204F35F70050ED91 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30A4EE30204F35F70050ED91 /* Build configuration list for PBXNativeTarget "MagicTrickTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30A4EE31204F35F70050ED91 /* Debug */,
-				30A4EE32204F35F70050ED91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
