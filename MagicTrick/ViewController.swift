@@ -36,6 +36,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }()
 
     @IBAction func throwAction(_ sender: UIButton) {
+
+        guard let frame = self.sceneView.session.currentFrame else {
+            return
+        }
+
+        let camera = SCNMatrix4(frame.camera.transform)
+        let direction = SCNVector3(camera.m31, camera.m32, camera.m33) * -1
+        let position  = SCNVector3(camera.m41, camera.m42, camera.m43)
+
+        let ball = SCNNode.ball()
+        self.add(ball: ball)
+
+        ball.position = position
+        ball.physicsBody?.applyForce(direction * 4.0, asImpulse: true)
     }
 
     private var magicHat: SCNNode?
