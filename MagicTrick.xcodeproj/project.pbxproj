@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30A4779B2059942B0027A25F /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4779A2059942B0027A25F /* Swift+Extensions.swift */; };
 		30A4EE12204F35F60050ED91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4EE11204F35F60050ED91 /* AppDelegate.swift */; };
 		30A4EE14204F35F70050ED91 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A4EE13204F35F70050ED91 /* art.scnassets */; };
 		30A4EE16204F35F70050ED91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4EE15204F35F70050ED91 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30A4779A2059942B0027A25F /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
 		30A4EE0E204F35F60050ED91 /* MagicTrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A4EE11204F35F60050ED91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A4EE13204F35F70050ED91 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30A4779C205994540027A25F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30A4779A2059942B0027A25F /* Swift+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		30A4EE05204F35F60050ED91 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		30A4EE10204F35F60050ED91 /* MagicTrick */ = {
 			isa = PBXGroup;
 			children = (
+				30A4779C205994540027A25F /* Extensions */,
 				30A4EE11204F35F60050ED91 /* AppDelegate.swift */,
 				30A4EE13204F35F70050ED91 /* art.scnassets */,
 				30A4EE15204F35F70050ED91 /* ViewController.swift */,
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30A4EE16204F35F70050ED91 /* ViewController.swift in Sources */,
+				30A4779B2059942B0027A25F /* Swift+Extensions.swift in Sources */,
 				30A4EE12204F35F60050ED91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
