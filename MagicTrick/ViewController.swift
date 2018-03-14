@@ -41,6 +41,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     private var magicHat: SCNNode?
 
     private var floor: SCNNode?
+
+    private var isMagicHatPlaced: Bool {
+        return self.magicHat != nil
+            && self.floor != nil
+    }
+
+    private func updateUserInterface() {
+        DispatchQueue.main.async {
+            self.throwButton.isEnabled = self.isMagicHatPlaced
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +73,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         self.view.addSubview(self.buttonStack)
         NSLayoutConstraint.activate(self.buttonStackConstraints)
+
+        self.updateUserInterface()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -113,6 +127,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             node.addChildNode(hat)
             return hat
         }()
+
+        self.updateUserInterface()
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
