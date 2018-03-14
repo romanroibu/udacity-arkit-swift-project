@@ -14,6 +14,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
 
+    lazy var throwButton = RoundedButton(title: "Throw", target: self, action: #selector(self.throwAction(_:)))
+
+    lazy var buttonStack: UIStackView! = {
+        let stack = UIStackView(arrangedSubviews: [
+            self.throwButton,
+        ])
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    lazy var buttonStackConstraints: [NSLayoutConstraint] = {
+        let views: [String: Any] = [ "stack": self.buttonStack ]
+        var constraints: [NSLayoutConstraint] = []
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-[stack]-|", options: [], metrics: nil, views: views)
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:[stack]-40-|", options: .alignAllBottom, metrics: nil, views: views)
+        return constraints
+    }()
+
+    @IBAction func throwAction(_ sender: UIButton) {
+    }
 
     private var magicHat: SCNNode?
 
@@ -35,6 +58,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         self.sceneView.autoenablesDefaultLighting = true
         self.sceneView.automaticallyUpdatesLighting = true
+
+        self.view.addSubview(self.buttonStack)
+        NSLayoutConstraint.activate(self.buttonStackConstraints)
     }
 
     override func viewWillAppear(_ animated: Bool) {
