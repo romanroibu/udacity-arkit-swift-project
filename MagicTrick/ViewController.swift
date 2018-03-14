@@ -42,9 +42,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     private var floor: SCNNode?
 
+    private lazy var balls: SCNNode = {
+        let node = SCNNode()
+        self.sceneView.scene.rootNode.addChildNode(node)
+        return node
+    }()
+
     private var isMagicHatPlaced: Bool {
         return self.magicHat != nil
             && self.floor != nil
+    }
+
+    private func add(ball: SCNNode) {
+        self.sceneView.scene.rootNode.addChildNode(ball)
+        self.balls.addChildNode(ball)
     }
 
     private func updateUserInterface() {
