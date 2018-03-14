@@ -39,3 +39,13 @@ func +(lhs: SCNVector3, rhs: SCNVector3) -> SCNVector3 { return lhs.apply(+, rhs
 func -(lhs: SCNVector3, rhs: SCNVector3) -> SCNVector3 { return lhs.apply(-, rhs) }
 func *(lhs: SCNVector3, rhs: SCNVector3) -> SCNVector3 { return lhs.apply(*, rhs) }
 func /(lhs: SCNVector3, rhs: SCNVector3) -> SCNVector3 { return lhs.apply(/, rhs) }
+
+extension SCNNode {
+
+    var size: SCNVector3 {
+
+        let (min, max) = self.boundingBox
+
+        return max - min
+    }
+}
