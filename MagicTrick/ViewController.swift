@@ -140,7 +140,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
 
         self.floor = {
-            let floor = SCNNode.floor(anchor)
+            let floor = SCNNode.floor(on: anchor)
             node.addChildNode(floor)
             return floor
         }()
@@ -156,11 +156,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
 
-        guard let anchor = anchor as? ARPlaneAnchor,
-            let floor = node.childNodes.first(where: { $0.name == "Floor" })
-            else { return }
+        guard let anchor = anchor as? ARPlaneAnchor else {
+            return
+        }
 
-        floor.updateFloor(anchor)
+        guard let floor = node.childNodes.first(where: { $0.name == "Floor" }) else {
+            return
+        }
+
+        floor.updateFloor(on: anchor)
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
