@@ -146,9 +146,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }()
 
         self.magicHat = {
-            let hat = SCNNode.magicHat()
-            hat.position = SCNVector3(x: anchor.center.x, y: hat.size.y / 2, z: anchor.center.z)
-            hat.isHidden = false
+            let hat = SCNNode.magicHat(on: anchor)
             node.addChildNode(hat)
             return hat
         }()

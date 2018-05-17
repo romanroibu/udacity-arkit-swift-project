@@ -7,6 +7,7 @@
 //
 
 import SceneKit
+import class ARKit.ARPlaneAnchor
 
 extension SCNNode {
 
@@ -14,9 +15,11 @@ extension SCNNode {
         return self.childNode(withName: "cylinder", recursively: true)!
     }
 
-    static func magicHat() -> SCNNode {
+    static func magicHat(on anchor: ARPlaneAnchor) -> SCNNode {
         let scene = SCNScene(named: "art.scnassets/hat.scn")!
         let node = scene.rootNode.childNode(withName: "hat", recursively: true)!
+        let height = node.boundingBox.max.y - node.boundingBox.min.y
+        node.position = SCNVector3(anchor.center.x, height/2, anchor.center.z)
         return node
     }
 }
