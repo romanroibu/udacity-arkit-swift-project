@@ -90,6 +90,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.balls.addChildNode(ball)
     }
 
+    private func removeBall(at index: Int) {
+        self.balls.childNodes[index].removeFromParentNode()
+    }
+
     private func updateUserInterface() {
         DispatchQueue.main.async {
             self.throwButton.isEnabled = self.isMagicHatPlaced
@@ -111,6 +115,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         // Set the scene to the view
         sceneView.scene = scene
+
+        //sceneView.debugOptions = [.showPhysicsShapes]
 
         self.sceneView.autoenablesDefaultLighting = true
         self.sceneView.automaticallyUpdatesLighting = true
@@ -184,6 +190,32 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
 
         floor.updateFloor(on: anchor)
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+
+        func vertical(_ node: SCNNode) -> Float {
+            return node.presentation.worldPosition.y
+        }
+
+        guard let floor = self.floor else {
+            return
+        }
+
+        guard let magicHat = self.magicHat else {
+            return
+        }
+
+        let indices = self.balls.childNodes.enumerated()
+            .filter { !magicHat.magicHatContains($0.element) }
+            .filter { vertical($0.element) < vertical(floor) }
+            .map { $0.offset }
+
+        guard !indices.isEmpty else {
+            return
+        }
+
+        indices.forEach(self.removeBall(at:))
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
