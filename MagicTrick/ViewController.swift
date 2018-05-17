@@ -221,15 +221,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
 
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: {})
     }
 
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
 
+        let alert = UIAlertController(title: "Interrupt", message: "The session has been interrupted"   , preferredStyle: .alert)
+        self.present(alert, animated: true, completion: {})
     }
 
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
 
+        self.presentedViewController?.dismiss(animated: true, completion: {})
     }
 }
