@@ -36,6 +36,7 @@ extension SCNNode {
         }()
 
         let ball = SCNNode()
+        ball.name = "Ball"
         ball.geometry = geometry
         ball.physicsBody = physics
         return ball

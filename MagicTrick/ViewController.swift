@@ -86,7 +86,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     private func add(ball: SCNNode) {
-        self.sceneView.scene.rootNode.addChildNode(ball)
         self.balls.addChildNode(ball)
     }
 
@@ -160,7 +159,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             return
         }
 
-        guard self.magicHat == nil, self.floor == nil else {
+        guard !self.isMagicHatPlaced else {
             return
         }
 
