@@ -16,9 +16,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     lazy var throwButton = RoundedButton(title: "Throw", target: self, action: #selector(self.throwAction(_:)))
 
+    lazy var magicButton = RoundedButton(title: "Magic", target: self, action: #selector(self.magicAction(_:)))
+
     lazy var buttonStack: UIStackView! = {
         let stack = UIStackView(arrangedSubviews: [
             self.throwButton,
+            self.magicButton,
         ])
         stack.axis = .horizontal
         stack.distribution = .fillEqually
@@ -52,6 +55,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ball.physicsBody?.applyForce(direction * 4.0, asImpulse: true)
     }
 
+    @IBAction func magicAction(_ sender: UIButton) {
+
+        guard let magicHat = self.magicHat else {
+            return
+        }
+
+        self.isMagicOn.toggle()
+
+        self.balls.childNodes.filter(magicHat.magicHatContains).forEach { ball in
+            ball.isHidden = self.isMagicOn
+        }
+    }
+
     private var magicHat: SCNNode?
 
     private var floor: SCNNode?
@@ -61,6 +77,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.sceneView.scene.rootNode.addChildNode(node)
         return node
     }()
+
+    private var isMagicOn: Bool = false
 
     private var isMagicHatPlaced: Bool {
         return self.magicHat != nil
@@ -75,6 +93,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     private func updateUserInterface() {
         DispatchQueue.main.async {
             self.throwButton.isEnabled = self.isMagicHatPlaced
+            self.magicButton.isEnabled = self.isMagicHatPlaced
         }
     }
 

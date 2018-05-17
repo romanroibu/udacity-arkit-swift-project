@@ -22,4 +22,25 @@ extension SCNNode {
         node.position = SCNVector3(anchor.center.x, height/2, anchor.center.z)
         return node
     }
+
+    func magicHatContains(_ other: SCNNode) -> Bool {
+        return self.cylinder.contains(node: other)
+    }
+
+    private func contains(node other: SCNNode) -> Bool {
+
+        let position = other.presentation.worldPosition
+
+        var size: SCNVector3 {
+            let (min, max) = self.presentation.boundingBox
+            return max - min
+        }
+
+        let min = self.worldPosition - size / 2
+        let max = self.worldPosition + size / 2
+
+        return (min.x...max.x).contains(position.x)
+            && (min.y...max.y).contains(position.y)
+            && (min.z...max.z).contains(position.z)
+    }
 }
